@@ -920,7 +920,12 @@ li {
 }
 
 .about-text p {
+    color: var(--dark);
     margin-bottom: var(--spacing-4);
+}
+
+.dark-theme .about-text p {
+    color: var(--light);
 }
 
 .about-cta {
@@ -985,11 +990,13 @@ li {
     padding: var(--spacing-6);
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    color: var(--dark);
 }
 
 .dark-theme .timeline-content {
     background-color: var(--dark-lighter);
     box-shadow: var(--shadow-dark-md);
+    color: var(--light);
 }
 
 .timeline-content:hover {
@@ -1390,13 +1397,13 @@ li {
 
 .portfolio-description {
     font-size: var(--font-size-sm);
-    color: var(--gray);
+    color: var(--dark);
     margin-bottom: 0;
     margin-top: auto;
 }
 
 .dark-theme .portfolio-description {
-    color: var(--gray-light);
+    color: var(--light);
 }
 
 /* Certifications Section */

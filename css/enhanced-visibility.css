@@ -1,0 +1,112 @@
+/* 
+==============================================
+ENHANCED VISIBILITY CSS - FIXES TEXT CONTRAST ISSUES
+==============================================
+*/
+
+/* Base text visibility improvements */
+body {
+    color: #f5f5f5;
+}
+
+/* About section text visibility */
+.about-text p {
+    color: #f5f5f5 !important;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline content visibility improvements */
+.timeline-description p,
+.timeline-description li {
+    color: #f5f5f5 !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-title {
+    color: #d4af37 !important;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-subtitle {
+    color: #f5f5f5 !important;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-date {
+    color: #d4af37 !important;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+/* Experience section visibility improvements */
+.timeline-description ul {
+    padding-left: 1.2rem;
+}
+
+.timeline-description li {
+    color: #f5f5f5 !important;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+/* Light theme adjustments */
+body.light-theme .about-text p,
+body.light-theme .timeline-description p,
+body.light-theme .timeline-description li {
+    color: #111111 !important;
+    text-shadow: none;
+}
+
+body.light-theme .timeline-subtitle {
+    color: #333333 !important;
+}
+
+/* Ensure all text has proper contrast */
+.section-subtitle {
+    color: #d4af37 !important;
+    font-weight: 600;
+}
+
+/* Recommendation section text visibility */
+.recommendation-position,
+.recommendation-text {
+    color: #f5f5f5 !important;
+}
+
+body.light-theme .recommendation-position,
+body.light-theme .recommendation-text {
+    color: #111111 !important;
+}
+
+/* Contact section text visibility */
+.contact-info-text,
+.contact-info-content p {
+    color: #f5f5f5 !important;
+}
+
+body.light-theme .contact-info-text,
+body.light-theme .contact-info-content p {
+    color: #111111 !important;
+}
+
+/* Ensure all headings have proper contrast */
+h1, h2, h3, h4, h5, h6 {
+    color: #d4af37 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure all paragraphs have proper contrast */
+p {
+    color: #f5f5f5 !important;
+}
+
+body.light-theme p {
+    color: #111111 !important;
+}
