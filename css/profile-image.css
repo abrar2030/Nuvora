@@ -1,0 +1,99 @@
+/* 
+==============================================
+PROFILE IMAGE CENTERING AND STYLING
+==============================================
+*/
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-image-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    padding: 5px;
+    background: var(--gradient-primary);
+    box-shadow: var(--glow-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--base-dark);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--glow-tertiary);
+    border: 3px solid var(--base-dark);
+}
+
+.exp-years {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+}
+
+.exp-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.about-text {
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .about-image-wrapper {
+        margin: 0;
+    }
+    
+    .about-text {
+        text-align: left;
+    }
+    
+    .about-cta {
+        justify-content: flex-start;
+    }
+}

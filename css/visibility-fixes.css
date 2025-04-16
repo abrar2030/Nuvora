@@ -1,0 +1,115 @@
+/* Additional adjustments to ensure text visibility */
+body {
+    color: #f5f5f5 !important;
+}
+
+p, li, span, div:not(.gradient-text) {
+    color: #f5f5f5 !important;
+}
+
+.portfolio-description, 
+.certification-description, 
+.recommendation-text,
+.timeline-content, 
+.experience-content,
+.timeline-position, 
+.experience-company,
+.skill-name,
+.footer-text,
+.footer-link a,
+.footer-copyright {
+    color: #f5f5f5 !important;
+}
+
+/* Ensure dark background for cards */
+.glass-card,
+.portfolio-card, 
+.certification-card, 
+.recommendation-card {
+    background: rgba(10, 14, 23, 0.9) !important;
+}
+
+/* Ensure golden headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #d4af37 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure golden accents */
+.section-subtitle,
+.nav-link.active,
+.nav-link:hover,
+.certification-issuer,
+.github-link-box i, 
+.certification-link-box i,
+.footer-link i,
+.footer-title {
+    color: #d4af37 !important;
+}
+
+/* Light theme specific overrides */
+body.light-theme {
+    background-color: #f5f5f5 !important;
+}
+
+body.light-theme p, 
+body.light-theme li, 
+body.light-theme span, 
+body.light-theme div:not(.gradient-text) {
+    color: #111111 !important;
+}
+
+body.light-theme .glass-card,
+body.light-theme .portfolio-card, 
+body.light-theme .certification-card, 
+body.light-theme .recommendation-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.light-theme .portfolio-description, 
+body.light-theme .certification-description, 
+body.light-theme .recommendation-text,
+body.light-theme .timeline-content, 
+body.light-theme .experience-content,
+body.light-theme .timeline-position, 
+body.light-theme .experience-company,
+body.light-theme .skill-name,
+body.light-theme .footer-text,
+body.light-theme .footer-link a,
+body.light-theme .footer-copyright {
+    color: #111111 !important;
+}
+
+/* Ensure buttons have good contrast */
+.btn-primary, .contact-form-submit {
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+
+/* Ensure footer has proper styling */
+.footer {
+    background: #0a0e17 !important;
+    border-top: 2px solid #d4af37 !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Ensure social links are visible */
+.footer-social-link {
+    background: rgba(10, 14, 23, 0.8) !important;
+    border: 1px solid #d4af37 !important;
+}
+
+.footer-social-link i {
+    color: #d4af37 !important;
+}
+
+.footer-social-link:hover {
+    background: #d4af37 !important;
+}
+
+.footer-social-link:hover i {
+    color: #0a0e17 !important;
+}

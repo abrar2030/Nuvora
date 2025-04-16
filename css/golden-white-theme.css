@@ -1,0 +1,473 @@
+/* 
+==============================================
+GOLDEN AND WHITE COLOR SCHEME - IMPROVED TEXT VISIBILITY
+==============================================
+*/
+
+:root {
+    /* Base Colors */
+    --base-dark: #0a0e17;
+    --dark-secondary: #151c28;
+    
+    /* New Golden and White Color Scheme */
+    --primary: #d4af37; /* Golden */
+    --primary-dark: #b8960b;
+    --secondary: #ffffff; /* White */
+    --tertiary: #f5f5f5; /* Off-white */
+    --tertiary-dark: #e0e0e0;
+    --neutral-light: #f8f8f8;
+    --white: #ffffff;
+    --text-dark: #111111; /* Dark text color for light backgrounds */
+    --text-light: #f5f5f5; /* Light text color for dark backgrounds */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #d4af37, #ffd700);
+    --gradient-secondary: linear-gradient(135deg, #ffffff, #f5f5f5);
+    --gradient-accent: linear-gradient(135deg, #ffd700, #ffffff);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 15px rgba(212, 175, 55, 0.6);
+    --glow-secondary: 0 0 15px rgba(255, 255, 255, 0.6);
+    --glow-tertiary: 0 0 15px rgba(245, 245, 245, 0.6);
+    --glow-subtle: 0 0 10px rgba(212, 175, 55, 0.3);
+    
+    /* Glassmorphism */
+    --glass-background: rgba(10, 14, 23, 0.85);
+    --glass-blur: blur(10px);
+    --glass-border: 1px solid rgba(212, 175, 55, 0.2);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    --transition-fast: all 0.15s ease;
+    
+    /* Z-index */
+    --z-0: 0;
+    --z-10: 10;
+    --z-20: 20;
+    --z-30: 30;
+    --z-40: 40;
+    --z-50: 50;
+    --z-auto: auto;
+    
+    /* Spacing */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    --spacing-20: 5rem;
+    --spacing-24: 6rem;
+    --spacing-32: 8rem;
+    
+    /* Typography */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-subheading: 'Rajdhani', sans-serif;
+    --font-body: 'Exo 2', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Light Theme Variables */
+body.light-theme {
+    --base-dark: #ffffff;
+    --dark-secondary: #f5f5f5;
+    --primary: #d4af37; /* Golden */
+    --primary-dark: #b8960b;
+    --secondary: #333333; /* Dark gray for contrast */
+    --tertiary: #555555;
+    --tertiary-dark: #777777;
+    --neutral-light: #333333;
+    --white: #111111;
+    --text-dark: #111111;
+    --text-light: #f5f5f5;
+    
+    /* Glassmorphism */
+    --glass-background: rgba(255, 255, 255, 0.85);
+    --glass-border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Improved Text Visibility - Base Styles */
+body {
+    color: var(--text-light);
+    background-color: var(--base-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+p, li, span, div {
+    color: var(--text-light);
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Section Headers */
+.section-title {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid var(--primary);
+    box-shadow: var(--glow-primary);
+}
+
+/* Cards and Containers */
+.glass-card {
+    background: var(--glass-background);
+    border: var(--glass-border);
+    color: var(--text-light);
+}
+
+.portfolio-card, .certification-card, .recommendation-card {
+    background: var(--glass-background);
+}
+
+.portfolio-content, .certification-content {
+    color: var(--text-light);
+}
+
+.portfolio-title, .certification-title, .recommendation-title {
+    color: var(--primary);
+}
+
+.portfolio-description, .certification-description, .recommendation-text {
+    color: var(--text-light);
+}
+
+/* Navigation */
+.nav-link {
+    color: var(--text-light);
+}
+
+.nav-link.active, .nav-link:hover {
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--text-dark);
+}
+
+/* Link Boxes */
+.github-link-box, .certification-link-box {
+    background: rgba(10, 14, 23, 0.6);
+    border: 1px solid var(--primary);
+}
+
+.github-link-box span, .certification-link-box span {
+    color: var(--text-light);
+}
+
+.github-link-box i, .certification-link-box i {
+    color: var(--primary);
+}
+
+.github-link-box:hover, .certification-link-box:hover {
+    background: rgba(212, 175, 55, 0.2);
+}
+
+/* Timeline and Experience */
+.timeline-content, .experience-content {
+    color: var(--text-light);
+}
+
+.timeline-title, .experience-title {
+    color: var(--primary);
+}
+
+.timeline-position, .experience-company {
+    color: var(--text-light);
+}
+
+.timeline-date, .experience-date {
+    color: var(--primary);
+}
+
+/* Skills */
+.skill-name {
+    color: var(--text-light);
+}
+
+.skill-progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.skill-progress-bar::after {
+    background: var(--gradient-primary);
+}
+
+/* Contact Form */
+.contact-form input, .contact-form textarea {
+    background: rgba(10, 14, 23, 0.6);
+    border: 1px solid var(--primary);
+    color: var(--text-light);
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form-submit {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Footer - Updated */
+.footer {
+    background: var(--dark-secondary);
+    border-top: 1px solid var(--primary);
+    padding: 3rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-title {
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: var(--glow-primary);
+}
+
+.footer-text {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-link {
+    margin-bottom: 0.75rem;
+}
+
+.footer-link a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.footer-link a:hover {
+    color: var(--primary);
+}
+
+.footer-link i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.footer-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(10, 14, 23, 0.6);
+    border: 1px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.footer-social-link:hover {
+    background: var(--primary);
+    color: var(--text-dark);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-copyright {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.footer-copyright a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.footer-copyright a:hover {
+    text-decoration: underline;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-nav-link {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-nav-link:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+/* Light Theme Adjustments */
+body.light-theme {
+    background-color: var(--base-dark);
+}
+
+body.light-theme p, 
+body.light-theme li, 
+body.light-theme span, 
+body.light-theme div {
+    color: var(--text-dark);
+}
+
+body.light-theme .glass-card,
+body.light-theme .portfolio-card, 
+body.light-theme .certification-card, 
+body.light-theme .recommendation-card {
+    background: var(--glass-background);
+}
+
+body.light-theme .portfolio-description, 
+body.light-theme .certification-description, 
+body.light-theme .recommendation-text,
+body.light-theme .timeline-content, 
+body.light-theme .experience-content,
+body.light-theme .timeline-position, 
+body.light-theme .experience-company,
+body.light-theme .skill-name,
+body.light-theme .footer-text,
+body.light-theme .footer-link a,
+body.light-theme .footer-copyright {
+    color: var(--text-dark);
+}
+
+body.light-theme .nav-link {
+    color: var(--text-dark);
+}
+
+body.light-theme .github-link-box, 
+body.light-theme .certification-link-box {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--primary);
+}
+
+body.light-theme .github-link-box span, 
+body.light-theme .certification-link-box span {
+    color: var(--text-dark);
+}
+
+body.light-theme .contact-form input, 
+body.light-theme .contact-form textarea {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--primary);
+    color: var(--text-dark);
+}
+
+body.light-theme .contact-form input::placeholder, 
+body.light-theme .contact-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+body.light-theme .footer {
+    background: var(--dark-secondary);
+}
+
+body.light-theme .footer-social-link {
+    background: rgba(255, 255, 255, 0.6);
+}
