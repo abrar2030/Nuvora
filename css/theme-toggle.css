@@ -27,6 +27,63 @@ body.light-theme {
     --glow-subtle: 0 0 5px rgba(0, 114, 255, 0.2);
 }
 
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+    background: var(--glass-background);
+    border: var(--glass-border);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    box-shadow: var(--glow-subtle);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+}
+
+.theme-toggle i {
+    font-size: 18px;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+/* Show/hide icons based on theme */
+body.dark-theme .theme-toggle .fa-sun {
+    display: block;
+}
+
+body.dark-theme .theme-toggle .fa-moon {
+    display: none;
+}
+
+body.light-theme .theme-toggle .fa-sun {
+    display: none;
+}
+
+body.light-theme .theme-toggle .fa-moon {
+    display: block;
+}
+
+/* Default state (dark theme) */
+.theme-toggle .fa-sun {
+    display: block;
+}
+
+.theme-toggle .fa-moon {
+    display: none;
+}
+
 /* Transition for theme change */
 body, 
 .glass-card, 

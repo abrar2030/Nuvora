@@ -14,11 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Get the GitHub URL
       const githubUrl = githubLink.getAttribute('href');
       
-      // Create a simplified repo name from the URL
-      const repoName = githubUrl.split('/').pop();
-      const username = githubUrl.split('/')[3];
-      const displayUrl = `github.com/${username}/${repoName}`;
-      
       // Check if a GitHub link box already exists
       if (!contentDiv.querySelector('.github-link-box')) {
         // Create the GitHub link box
@@ -26,16 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         linkBox.className = 'github-link-box';
         linkBox.href = githubUrl;
         linkBox.target = '_blank';
+        linkBox.setAttribute('aria-label', 'View project on GitHub');
         
         // Add icon
         const icon = document.createElement('i');
         icon.className = 'fab fa-github';
         linkBox.appendChild(icon);
-        
-        // Add text
-        const span = document.createElement('span');
-        span.textContent = displayUrl;
-        linkBox.appendChild(span);
         
         // Append to content div
         contentDiv.appendChild(linkBox);
