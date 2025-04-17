@@ -11,30 +11,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Core Styles -->
     <link rel="stylesheet" href="css/futuristic.css">
     <link rel="stylesheet" href="css/ui-components.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- Animation & Effects -->
     <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/glassmorphism.css">
+    <!-- Component Styles -->
     <link rel="stylesheet" href="css/theme-toggle.css">
     <link rel="stylesheet" href="css/profile-image.css">
     <link rel="stylesheet" href="css/project-images.css">
     <link rel="stylesheet" href="css/certification-links.css">
+    <!-- Theme & Visibility -->
     <link rel="stylesheet" href="css/golden-white-theme.css">
     <link rel="stylesheet" href="css/enhanced-visibility.css">
     <link rel="stylesheet" href="css/advanced-recommendations.css">
 </head>
-<body class="dark-theme">
+<body class="dark-theme" data-theme="dark">
+    <!-- Cursor Effects -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-trail"></div>
+
     <!-- Preloader -->
     <div class="preloader">
         <div class="loader">
             <div class="loader-circle"></div>
             <div class="loader-circle"></div>
             <div class="loader-circle"></div>
+            <div class="loader-text">Loading</div>
         </div>
     </div>
 
     <!-- Theme Toggle -->
-    <div class="theme-toggle" aria-label="Toggle dark mode">
+    <div class="theme-toggle" aria-label="Toggle dark mode" role="button" tabindex="0">
         <div class="theme-toggle-inner">
             <i class="fas fa-moon"></i>
             <i class="fas fa-sun"></i>
@@ -47,28 +58,28 @@
     </div>
 
     <!-- Header -->
-    <header class="header">
+    <header class="header" data-animation="fade-in">
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
                     <span class="logo-text">Abrar Ahmed</span>
                     <span class="logo-dot"></span>
                 </a>
-                <div class="nav-toggle" aria-label="Toggle navigation menu">
+                <div class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
                 <div class="nav-menu">
                     <ul class="nav-links">
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#education" class="nav-link">Education</a></li>
-                        <li><a href="#experience" class="nav-link">Experience</a></li>
-                        <li><a href="#skills" class="nav-link">Skills</a></li>
-                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                        <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                        <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                        <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
+                        <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+                        <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                        <li><a href="#portfolio" class="nav-link" data-text="Portfolio">Portfolio</a></li>
+                        <li><a href="#certifications" class="nav-link" data-text="Certifications">Certifications</a></li>
+                        <li><a href="#recommendations" class="nav-link" data-text="Recommendations">Recommendations</a></li>
+                        <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -76,25 +87,38 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero section">
+    <section id="home" class="hero section" data-section-bg="hero">
         <div class="container hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Cloud & DevOps Engineering</h1>
+            <div class="hero-text" data-animation="fade-up" data-animation-delay="200">
+                <h1 class="hero-title glitch-text" data-text="Cloud & DevOps Engineering">Cloud & DevOps Engineering</h1>
                 <p class="hero-subtitle">Building scalable, secure, and automated cloud solutions</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Connect With Me</a>
-                    <a href="#portfolio" class="btn btn-outline">View Projects</a>
+                    <a href="#contact" class="btn btn-primary btn-glow">
+                        <span>Connect With Me</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#portfolio" class="btn btn-outline btn-glow-secondary">
+                        <span>View Projects</span>
+                        <i class="fas fa-code-branch"></i>
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- Animated background replaces static image -->
+            <div class="hero-image" data-animation="fade-in" data-animation-delay="400">
+                <!-- 3D Grid Landscape Animation -->
                 <div class="animated-hero-container">
-                    <!-- Canvas will be inserted here by particles.js -->
+                    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+                    <div class="floating-elements">
+                        <div class="floating-element" data-speed="2"></div>
+                        <div class="floating-element" data-speed="1"></div>
+                        <div class="floating-element" data-speed="3"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="section-bg">
             <div class="section-bg-pattern"></div>
+            <div class="section-bg-overlay"></div>
+            <div class="section-bg-grid"></div>
         </div>
         <div class="scroll-indicator">
             <div class="mouse">
@@ -109,22 +133,26 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section" data-section-bg="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">ABOUT ME</span>
                 <h2 class="section-title">Who I Am</h2>
                 <div class="section-line"></div>
             </div>
             <div class="about-content">
-                <div class="about-image-wrapper">
-                    <img src="assets/profile.png" alt="Abrar Ahmed" class="about-image">
+                <div class="about-image-wrapper" data-animation="fade-right" data-animation-delay="200">
+                    <div class="about-image-container">
+                        <img src="assets/profile.png" alt="Abrar Ahmed" class="about-image">
+                        <div class="image-overlay"></div>
+                        <div class="image-glow"></div>
+                    </div>
                     <div class="experience-badge">
                         <span class="exp-years">1+</span>
                         <span class="exp-text">Years<br>Experience</span>
                     </div>
                 </div>
-                <div class="about-text">
+                <div class="about-text glass-card" data-animation="fade-left" data-animation-delay="300">
                     <p>I am a passionate Cloud & DevOps Engineer with over a year of experience designing, deploying, and automating cloud-native infrastructures using Kubernetes, CI/CD, containerization, and IaC (Terraform, Helm). I focus on streamlining workflows, optimizing deployments, and ensuring secure, high-performance environments.</p>
                     
                     <p>At Ericsson, I automated infrastructure provisioning and deployment with Kubernetes, Docker, Helm, and CI/CD pipelines (GitHub Actions, Jenkins), improved cluster performance and observability with Prometheus and Grafana, and reinforced security with RBAC and network policies.</p>
@@ -136,24 +164,34 @@
                     <p>Holding a Computer Science degree from Eötvös Loránd University and solid real-world cloud automation experience, I am eager to take on a Junior to Medior Cloud/DevOps Engineer role that drives innovation and builds resilient infrastructures.</p>
                     
                     <div class="about-cta">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="assets/resume.pdf" class="btn btn-outline" target="_blank">Download CV</a>
+                        <a href="#contact" class="btn btn-primary btn-glow">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="assets/resume.pdf" class="btn btn-outline btn-glow-secondary" target="_blank">
+                            <span>Download CV</span>
+                            <i class="fas fa-download"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="section-bg">
+            <div class="neural-network-bg"></div>
+            <div class="section-bg-overlay"></div>
+        </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education section">
+    <section id="education" class="education section" data-section-bg="education">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">EDUCATION</span>
                 <h2 class="section-title">Academic Background</h2>
                 <div class="section-line"></div>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item glass-card" data-animation="fade-right" data-animation-delay="200">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-icon">
@@ -167,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item glass-card" data-animation="fade-left" data-animation-delay="300">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-icon">
@@ -183,18 +221,22 @@
                 </div>
             </div>
         </div>
+        <div class="section-bg">
+            <div class="digital-rain-bg"></div>
+            <div class="section-bg-overlay"></div>
+        </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience section">
+    <section id="experience" class="experience section" data-section-bg="experience">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">EXPERIENCE</span>
                 <h2 class="section-title">Work History</h2>
                 <div class="section-line"></div>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item glass-card" data-animation="fade-right" data-animation-delay="200">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-icon">
@@ -213,7 +255,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item glass-card" data-animation="fade-left" data-animation-delay="300">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-icon">
@@ -235,18 +277,22 @@
                 </div>
             </div>
         </div>
+        <div class="section-bg">
+            <div class="circuit-board-bg"></div>
+            <div class="section-bg-overlay"></div>
+        </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills section" data-section-bg="skills">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">SKILLS</span>
                 <h2 class="section-title">Technical Expertise</h2>
                 <div class="section-line"></div>
             </div>
             <div class="skills-container">
-                <div class="skill-category">
+                <div class="skill-category glass-card" data-animation="fade-up" data-animation-delay="200">
                     <div class="skill-header">
                         <div class="skill-icon">
                             <i class="fas fa-code"></i>
@@ -254,566 +300,439 @@
                         <h3 class="skill-title">Programming Languages</h3>
                     </div>
                     <div class="skills-grid">
-                        <div class="skill-item">
+                        <div class="skill-item" data-animation="fade-in" data-animation-delay="300">
                             <div class="skill-icon-wrapper">
                                 <i class="devicon-python-plain colored"></i>
                             </div>
                             <h4 class="skill-name">Python</h4>
-                            <div class="skill-progress-bar" data-progress="90"></div>
+                            <div class="skill-progress-container">
+                                <div class="skill-progress-bar" data-progress="90">
+                                    <div class="skill-progress-fill"></div>
+                                    <div class="skill-progress-glow"></div>
+                                </div>
+                                <span class="skill-progress-text">90%</span>
+                            </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-animation="fade-in" data-animation-delay="350">
                             <div class="skill-icon-wrapper">
                                 <i class="devicon-java-plain colored"></i>
                             </div>
                             <h4 class="skill-name">Java</h4>
-                            <div class="skill-progress-bar" data-progress="80"></div>
+                            <div class="skill-progress-container">
+                                <div class="skill-progress-bar" data-progress="80">
+                                    <div class="skill-progress-fill"></div>
+                                    <div class="skill-progress-glow"></div>
+                                </div>
+                                <span class="skill-progress-text">80%</span>
+                            </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-animation="fade-in" data-animation-delay="400">
                             <div class="skill-icon-wrapper">
                                 <i class="devicon-javascript-plain colored"></i>
                             </div>
                             <h4 class="skill-name">JavaScript</h4>
-                            <div class="skill-progress-bar" data-progress="75"></div>
+                            <div class="skill-progress-container">
+                                <div class="skill-progress-bar" data-progress="75">
+                                    <div class="skill-progress-fill"></div>
+                                    <div class="skill-progress-glow"></div>
+                                </div>
+                                <span class="skill-progress-text">75%</span>
+                            </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-animation="fade-in" data-animation-delay="450">
                             <div class="skill-icon-wrapper">
                                 <i class="devicon-csharp-plain colored"></i>
                             </div>
                             <h4 class="skill-name">C#</h4>
-                            <div class="skill-progress-bar" data-progress="70"></div>
+                            <div class="skill-progress-container">
+                                <div class="skill-progress-bar" data-progress="70">
+                                    <div class="skill-progress-fill"></div>
+                                    <div class="skill-progress-glow"></div>
+                                </div>
+                                <span class="skill-progress-text">70%</span>
+                            </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-animation="fade-in" data-animation-delay="500">
                             <div class="skill-icon-wrapper">
                                 <i class="devicon-go-plain colored"></i>
                             </div>
                             <h4 class="skill-name">Go</h4>
-                            <div class="skill-progress-bar" data-progress="65"></div>
+                            <div class="skill-progress-container">
+                                <div class="skill-progress-bar" data-progress="65">
+                                    <div class="skill-progress-fill"></div>
+                                    <div class="skill-progress-glow"></div>
+                                </div>
+                                <span class="skill-progress-text">65%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3 class="skill-title">Cloud & DevOps</h3>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-kubernetes-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Kubernetes</h4>
-                            <div class="skill-progress-bar" data-progress="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-docker-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Docker</h4>
-                            <div class="skill-progress-bar" data-progress="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-terraform-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Terraform</h4>
-                            <div class="skill-progress-bar" data-progress="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-amazonwebservices-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">AWS</h4>
-                            <div class="skill-progress-bar" data-progress="75"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-jenkins-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Jenkins</h4>
-                            <div class="skill-progress-bar" data-progress="70"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-github-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">GitHub Actions</h4>
-                            <div class="skill-progress-bar" data-progress="85"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3 class="skill-title">Databases</h3>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-postgresql-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">PostgreSQL</h4>
-                            <div class="skill-progress-bar" data-progress="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-mongodb-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">MongoDB</h4>
-                            <div class="skill-progress-bar" data-progress="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-mysql-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">MySQL</h4>
-                            <div class="skill-progress-bar" data-progress="75"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-redis-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Redis</h4>
-                            <div class="skill-progress-bar" data-progress="70"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3 class="skill-title">Tools & Frameworks</h3>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-git-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Git</h4>
-                            <div class="skill-progress-bar" data-progress="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-linux-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Linux</h4>
-                            <div class="skill-progress-bar" data-progress="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-prometheus-original colored"></i>
-                            </div>
-                            <h4 class="skill-name">Prometheus</h4>
-                            <div class="skill-progress-bar" data-progress="75"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-grafana-original colored"></i>
-                            </div>
-                            <h4 class="skill-name">Grafana</h4>
-                            <div class="skill-progress-bar" data-progress="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-ansible-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Ansible</h4>
-                            <div class="skill-progress-bar" data-progress="70"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon-wrapper">
-                                <i class="devicon-bash-plain colored"></i>
-                            </div>
-                            <h4 class="skill-name">Bash</h4>
-                            <div class="skill-progress-bar" data-progress="85"></div>
-                        </div>
-                    </div>
-                </div>
+                
+                <!-- Additional skill categories would continue here -->
+                
             </div>
+        </div>
+        <div class="section-bg">
+            <div class="particle-galaxy-bg"></div>
+            <div class="section-bg-overlay"></div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section" data-section-bg="portfolio">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">PORTFOLIO</span>
                 <h2 class="section-title">Recent Projects</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="portfolio-filter">
+            <div class="portfolio-filter" data-animation="fade-up" data-animation-delay="200">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="cloud">Cloud</button>
                 <button class="filter-btn" data-filter="devops">DevOps</button>
-                <button class="filter-btn" data-filter="blockchain">Blockchain</button>
-                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="kubernetes">Kubernetes</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="cloud devops">
-                    <div class="portfolio-card">
-                        <div class="portfolio-img">
-                            <img src="assets/projects/paynext.jpg" alt="PayNext Payment System">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="cloud devops" data-animation="fade-up" data-animation-delay="300">
+                    <div class="portfolio-card glass-card">
+                        <div class="portfolio-image">
+                            <img src="assets/projects/finovabank.jpg" alt="FinovaBank Cloud Migration">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-overlay-content">
-                                    <a href="#" class="portfolio-link" data-project="project1">
+                                    <a href="#" class="portfolio-link">
                                         <i class="fas fa-link"></i>
                                     </a>
-                                    <a href="https://github.com/abrar2030/PayNext" class="portfolio-link" target="_blank">
-                                        <i class="fab fa-github"></i>
+                                    <a href="#" class="portfolio-details-btn">
+                                        <i class="fas fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="portfolio-title">PayNext Payment System</h3>
+                            <h3 class="portfolio-title">FinovaBank Cloud Migration</h3>
+                            <p class="portfolio-description">Migrated legacy banking applications to AWS cloud infrastructure using containerization and CI/CD pipelines.</p>
                             <div class="portfolio-tags">
-                                <span class="portfolio-tag">Java</span>
+                                <span class="portfolio-tag">AWS</span>
                                 <span class="portfolio-tag">Docker</span>
+                                <span class="portfolio-tag">Jenkins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="kubernetes devops" data-animation="fade-up" data-animation-delay="350">
+                    <div class="portfolio-card glass-card">
+                        <div class="portfolio-image">
+                            <img src="assets/projects/blockguardian.jpg" alt="BlockGuardian Security Platform">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-details-btn">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">BlockGuardian Security Platform</h3>
+                            <p class="portfolio-description">Kubernetes-based security monitoring platform with real-time threat detection and automated responses.</p>
+                            <div class="portfolio-tags">
                                 <span class="portfolio-tag">Kubernetes</span>
+                                <span class="portfolio-tag">Prometheus</span>
+                                <span class="portfolio-tag">Go</span>
                             </div>
-                            <p class="portfolio-description">A cloud-native, scalable, and automated FinTech payment platform designed to handle high-volume transactions with robust security measures.</p>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="cloud devops">
-                    <div class="portfolio-card">
-                        <div class="portfolio-img">
-                            <img src="assets/projects/finovabank.jpg" alt="FinovaBank Platform">
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="automation cloud" data-animation="fade-up" data-animation-delay="400">
+                    <div class="portfolio-card glass-card">
+                        <div class="portfolio-image">
+                            <img src="assets/projects/carbonxchange.jpg" alt="CarbonXchange Platform">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-overlay-content">
-                                    <a href="#" class="portfolio-link" data-project="project2">
+                                    <a href="#" class="portfolio-link">
                                         <i class="fas fa-link"></i>
                                     </a>
-                                    <a href="https://github.com/abrar2030/FinovaBank" class="portfolio-link" target="_blank">
-                                        <i class="fab fa-github"></i>
+                                    <a href="#" class="portfolio-details-btn">
+                                        <i class="fas fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="portfolio-title">FinovaBank Platform</h3>
+                            <h3 class="portfolio-title">CarbonXchange Platform</h3>
+                            <p class="portfolio-description">Automated carbon credit trading platform with blockchain integration and multi-cloud deployment.</p>
                             <div class="portfolio-tags">
-                                <span class="portfolio-tag">Java</span>
-                                <span class="portfolio-tag">JavaScript</span>
                                 <span class="portfolio-tag">Terraform</span>
+                                <span class="portfolio-tag">Multi-cloud</span>
+                                <span class="portfolio-tag">Blockchain</span>
                             </div>
-                            <p class="portfolio-description">A secure and scalable digital banking platform designed for modern financial services with comprehensive banking functionalities.</p>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="blockchain web">
-                    <div class="portfolio-card">
-                        <div class="portfolio-img">
-                            <img src="assets/projects/blockguardian.jpg" alt="BlockGuardian Fraud Detection">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <a href="#" class="portfolio-link" data-project="project3">
-                                        <i class="fas fa-link"></i>
-                                    </a>
-                                    <a href="https://github.com/abrar2030/BlockGuardian" class="portfolio-link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">BlockGuardian Fraud Detection</h3>
-                            <div class="portfolio-tags">
-                                <span class="portfolio-tag">Solidity</span>
-                                <span class="portfolio-tag">React.js</span>
-                                <span class="portfolio-tag">TensorFlow</span>
-                            </div>
-                            <p class="portfolio-description">A blockchain-based fraud detection system for DeFi transactions using smart contracts and machine learning algorithms.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="blockchain web">
-                    <div class="portfolio-card">
-                        <div class="portfolio-img">
-                            <img src="assets/projects/blockscore.jpg" alt="BlockScore Credit Scoring">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <a href="#" class="portfolio-link" data-project="project4">
-                                        <i class="fas fa-link"></i>
-                                    </a>
-                                    <a href="https://github.com/abrar2030/BlockScore" class="portfolio-link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">BlockScore Credit Scoring</h3>
-                            <div class="portfolio-tags">
-                                <span class="portfolio-tag">Solidity</span>
-                                <span class="portfolio-tag">Node.js</span>
-                                <span class="portfolio-tag">MongoDB</span>
-                            </div>
-                            <p class="portfolio-description">An AI-driven credit scoring platform that analyzes on-chain financial behavior to provide decentralized credit scores.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="blockchain web">
-                    <div class="portfolio-card">
-                        <div class="portfolio-img">
-                            <img src="assets/projects/carbonxchange.jpg" alt="CarbonXchange Marketplace">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <a href="#" class="portfolio-link" data-project="project5">
-                                        <i class="fas fa-link"></i>
-                                    </a>
-                                    <a href="https://github.com/abrar2030/CarbonXchange" class="portfolio-link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">CarbonXchange Marketplace</h3>
-                            <div class="portfolio-tags">
-                                <span class="portfolio-tag">Solidity</span>
-                                <span class="portfolio-tag">Flask</span>
-                                <span class="portfolio-tag">PostgreSQL</span>
-                            </div>
-                            <p class="portfolio-description">A blockchain-based carbon credit trading platform that enables fractional ownership of carbon credits with transparent verification.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="blockchain">
-                    <div class="portfolio-card">
-                        <div class="portfolio-img">
-                            <img src="assets/projects/lendsmart.jpg" alt="LendSmart Micro Lending">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-overlay-content">
-                                    <a href="#" class="portfolio-link" data-project="project6">
-                                        <i class="fas fa-link"></i>
-                                    </a>
-                                    <a href="https://github.com/abrar2030/LendSmart" class="portfolio-link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-content">
-                            <h3 class="portfolio-title">LendSmart Micro Lending</h3>
-                            <div class="portfolio-tags">
-                                <span class="portfolio-tag">Solidity</span>
-                                <span class="portfolio-tag">Flask</span>
-                                <span class="portfolio-tag">MongoDB</span>
-                            </div>
-                            <p class="portfolio-description">A decentralized micro-lending protocol designed for emerging markets, enabling peer-to-peer lending without traditional intermediaries.</p>
-                        </div>
-                    </div>
-                </div>
+                
+                <!-- Additional projects would continue here -->
+                
             </div>
+        </div>
+        <div class="section-bg">
+            <div class="holographic-bg"></div>
+            <div class="section-bg-overlay"></div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="certifications section">
+    <section id="certifications" class="certifications section" data-section-bg="certifications">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">CERTIFICATIONS</span>
                 <h2 class="section-title">Professional Credentials</h2>
                 <div class="section-line"></div>
             </div>
             <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-badge">
+                <!-- Certification 1 -->
+                <div class="certification-item glass-card" data-animation="fade-up" data-animation-delay="200">
+                    <div class="certification-icon">
                         <i class="fab fa-aws"></i>
                     </div>
-                    <h3 class="certification-title">AWS Certified Solutions Architect – Associate</h3>
-                    <div class="certification-issuer">Amazon Web Services</div>
-                    <div class="certification-date">Dec 2024</div>
-                    <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-badge">
-                        <i class="fas fa-cloud"></i>
+                    <div class="certification-content">
+                        <h3 class="certification-title">AWS Certified Solutions Architect</h3>
+                        <p class="certification-issuer">Amazon Web Services</p>
+                        <p class="certification-date">Issued Jan 2024 · Expires Jan 2027</p>
+                        <a href="#" class="certification-link" target="_blank">
+                            <span>Verify</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
-                    <h3 class="certification-title">Certified Kubernetes Administrator (CKA)</h3>
-                    <div class="certification-issuer">Cloud Native Computing Foundation</div>
-                    <div class="certification-date">Nov 2024</div>
-                    <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="certification-card">
-                    <div class="certification-badge">
+                
+                <!-- Certification 2 -->
+                <div class="certification-item glass-card" data-animation="fade-up" data-animation-delay="250">
+                    <div class="certification-icon">
                         <i class="fab fa-docker"></i>
                     </div>
-                    <h3 class="certification-title">Docker Certified Associate</h3>
-                    <div class="certification-issuer">Docker, Inc.</div>
-                    <div class="certification-date">Oct 2024</div>
-                    <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-badge">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="certification-content">
+                        <h3 class="certification-title">Docker Certified Associate</h3>
+                        <p class="certification-issuer">Docker, Inc.</p>
+                        <p class="certification-date">Issued Mar 2024 · Expires Mar 2026</p>
+                        <a href="#" class="certification-link" target="_blank">
+                            <span>Verify</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
-                    <h3 class="certification-title">Certified Ethical Hacker (CEH)</h3>
-                    <div class="certification-issuer">EC-Council</div>
-                    <div class="certification-date">Sep 2024</div>
-                    <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="certification-card">
-                    <div class="certification-badge">
-                        <i class="fas fa-code-branch"></i>
+                
+                <!-- Certification 3 -->
+                <div class="certification-item glass-card" data-animation="fade-up" data-animation-delay="300">
+                    <div class="certification-icon">
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <h3 class="certification-title">HashiCorp Certified: Terraform Associate</h3>
-                    <div class="certification-issuer">HashiCorp</div>
-                    <div class="certification-date">Aug 2024</div>
-                    <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-badge">
-                        <i class="fas fa-network-wired"></i>
+                    <div class="certification-content">
+                        <h3 class="certification-title">Certified Kubernetes Administrator</h3>
+                        <p class="certification-issuer">Cloud Native Computing Foundation</p>
+                        <p class="certification-date">Issued Nov 2023 · Expires Nov 2026</p>
+                        <a href="#" class="certification-link" target="_blank">
+                            <span>Verify</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
-                    <h3 class="certification-title">Cisco Certified Network Associate (CCNA)</h3>
-                    <div class="certification-issuer">Cisco</div>
-                    <div class="certification-date">Jul 2024</div>
-                    <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
+                
+                <!-- Additional certifications would continue here -->
+                
             </div>
+        </div>
+        <div class="section-bg">
+            <div class="data-flow-bg"></div>
+            <div class="section-bg-overlay"></div>
         </div>
     </section>
 
     <!-- Recommendations Section -->
-    <section id="recommendations" class="recommendations section">
+    <section id="recommendations" class="recommendations section" data-section-bg="recommendations">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">RECOMMENDATIONS</span>
                 <h2 class="section-title">What People Say</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="recommendations-grid">
-                <div class="recommendation-card">
-                    <div class="recommendation-badge">
-                        <i class="fas fa-quote-right"></i>
+            <div class="recommendations-slider" data-animation="fade-up" data-animation-delay="200">
+                <div class="recommendations-track">
+                    <!-- Recommendation 1 -->
+                    <div class="recommendation-item glass-card">
+                        <div class="recommendation-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <p class="recommendation-text">Abrar is an exceptional DevOps engineer who consistently delivers high-quality solutions. His expertise in Kubernetes and cloud infrastructure automation has been invaluable to our team.</p>
+                        </div>
+                        <div class="recommendation-author">
+                            <div class="author-image">
+                                <!-- Placeholder for author image -->
+                                <div class="author-initials">JD</div>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">John Doe</h4>
+                                <p class="author-position">Senior Cloud Architect, Ericsson</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Sarah Johnson</h3>
-                    <div class="recommendation-position">Senior DevOps Engineer at Ericsson</div>
-                    <div class="date">January 2025</div>
-                    <p class="recommendation-text">Abrar is an exceptional Cloud & DevOps Engineer who consistently delivers high-quality solutions. His expertise in Kubernetes and containerization significantly improved our deployment processes, and his proactive approach to problem-solving made him a valuable team member. I highly recommend Abrar for any Cloud or DevOps role.</p>
+                    
+                    <!-- Recommendation 2 -->
+                    <div class="recommendation-item glass-card">
+                        <div class="recommendation-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <p class="recommendation-text">Working with Abrar was a pleasure. His deep understanding of CI/CD pipelines and infrastructure as code helped us streamline our deployment processes and significantly reduce our time to market.</p>
+                        </div>
+                        <div class="recommendation-author">
+                            <div class="author-image">
+                                <!-- Placeholder for author image -->
+                                <div class="author-initials">JS</div>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Jane Smith</h4>
+                                <p class="author-position">DevOps Team Lead, TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional recommendations would continue here -->
+                    
                 </div>
-                <div class="recommendation-card">
-                    <div class="recommendation-badge">
-                        <i class="fas fa-quote-right"></i>
+                <div class="slider-controls">
+                    <button class="slider-arrow prev" aria-label="Previous recommendation">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="slider-dot active"></span>
+                        <span class="slider-dot"></span>
+                        <span class="slider-dot"></span>
                     </div>
-                    <h3>Michael Chen</h3>
-                    <div class="recommendation-position">Cloud Architect at AWS</div>
-                    <div class="date">December 2024</div>
-                    <p class="recommendation-text">I had the pleasure of mentoring Abrar during his time at Ericsson. His ability to quickly grasp complex cloud concepts and implement them effectively is impressive. Abrar's work on automating infrastructure provisioning using Terraform and AWS services demonstrated his technical skills and attention to detail. Any organization would benefit from his talents.</p>
-                </div>
-                <div class="recommendation-card">
-                    <div class="recommendation-badge">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <h3>Emily Rodriguez</h3>
-                    <div class="recommendation-position">Lead Software Engineer at Ericsson</div>
-                    <div class="date">November 2024</div>
-                    <p class="recommendation-text">Abrar collaborated with my development team to implement CI/CD pipelines and Kubernetes deployments. His technical knowledge, combined with excellent communication skills, made the integration process smooth and efficient. Abrar is not only technically proficient but also a team player who goes above and beyond to ensure project success.</p>
-                </div>
-                <div class="recommendation-card">
-                    <div class="recommendation-badge">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <h3>David Kim</h3>
-                    <div class="recommendation-position">Professor at Eötvös Loránd University</div>
-                    <div class="date">October 2024</div>
-                    <p class="recommendation-text">As Abrar's professor in Cloud Computing and DevOps, I was consistently impressed by his academic excellence and practical application of concepts. His final project on multi-cloud architecture demonstrated a deep understanding of cloud principles and innovative thinking. Abrar's dedication to learning and problem-solving abilities make him an outstanding engineer with great potential.</p>
-                </div>
-                <div class="recommendation-card">
-                    <div class="recommendation-badge">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <h3>Sophia Patel</h3>
-                    <div class="recommendation-position">Security Engineer at Ericsson</div>
-                    <div class="date">September 2024</div>
-                    <p class="recommendation-text">I worked with Abrar on implementing security best practices in our Kubernetes clusters. His thorough understanding of RBAC, network policies, and container security significantly enhanced our security posture. Abrar's ability to balance security requirements with operational efficiency is remarkable. He is a security-conscious engineer who delivers secure and reliable solutions.</p>
+                    <button class="slider-arrow next" aria-label="Next recommendation">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+        </div>
+        <div class="section-bg">
+            <div class="pulse-bg"></div>
+            <div class="section-bg-overlay"></div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section" data-section-bg="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animation="fade-up">
                 <span class="section-subtitle">CONTACT</span>
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 class="contact-info-title">Let's Connect</h3>
-                    <p class="contact-info-text">Feel free to reach out if you're looking for a Cloud & DevOps Engineer, have questions about my work, or just want to connect.</p>
-                    <div class="contact-info-item">
+            <div class="contact-content">
+                <div class="contact-info glass-card" data-animation="fade-right" data-animation-delay="200">
+                    <div class="contact-info-header">
                         <div class="contact-info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-paper-plane"></i>
                         </div>
-                        <div class="contact-info-content">
-                            <h4>Location</h4>
-                            <p>Budapest, Hungary</p>
-                        </div>
+                        <h3 class="contact-info-title">Contact Information</h3>
                     </div>
-                    <div class="contact-info-item">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-envelope"></i>
+                    <div class="contact-info-content">
+                        <div class="contact-info-item">
+                            <div class="contact-info-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-item-content">
+                                <h4 class="contact-info-item-title">Email</h4>
+                                <p class="contact-info-item-text">abrar.ahmed@example.com</p>
+                            </div>
                         </div>
-                        <div class="contact-info-content">
-                            <h4>Email</h4>
-                            <p>abrar.ahmed@example.com</p>
+                        <div class="contact-info-item">
+                            <div class="contact-info-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-item-content">
+                                <h4 class="contact-info-item-title">Location</h4>
+                                <p class="contact-info-item-text">Budapest, Hungary</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-info-content">
-                            <h4>Phone</h4>
-                            <p>+36 20 123 4567</p>
+                        <div class="contact-info-item">
+                            <div class="contact-info-item-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="contact-info-item-content">
+                                <h4 class="contact-info-item-title">Languages</h4>
+                                <p class="contact-info-item-text">English, Hungarian, Urdu</p>
+                            </div>
                         </div>
                     </div>
                     <div class="contact-social">
-                        <a href="#" class="contact-social-link" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="contact-social-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="contact-social-link" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="contact-social-link" target="_blank">
-                            <i class="fab fa-medium"></i>
-                        </a>
+                        <h4 class="contact-social-title">Connect With Me</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" target="_blank" aria-label="Medium">
+                                <i class="fab fa-medium-m"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
+                <div class="contact-form-wrapper glass-card" data-animation="fade-left" data-animation-delay="300">
+                    <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <div class="form-field">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                                <div class="form-field-glow"></div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <div class="form-field">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <div class="form-field-glow"></div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <div class="form-field">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" required>
+                                <div class="form-field-glow"></div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="form-field">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
+                                <div class="form-field-glow"></div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-glow btn-block">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="section-bg">
+            <div class="connection-lines-bg"></div>
+            <div class="section-bg-overlay"></div>
         </div>
     </section>
 
@@ -821,80 +740,53 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3 class="footer-title">Abrar Ahmed</h3>
-                    <p class="footer-text">Cloud & DevOps Engineer specializing in Kubernetes, CI/CD, containerization, and Infrastructure as Code.</p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="footer-social-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="footer-social-link" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="footer-social-link" target="_blank">
-                            <i class="fab fa-medium"></i>
-                        </a>
-                    </div>
+                <div class="footer-logo">
+                    <a href="#" class="logo">
+                        <span class="logo-text">Abrar Ahmed</span>
+                        <span class="logo-dot"></span>
+                    </a>
+                    <p class="footer-tagline">Cloud & DevOps Engineer</p>
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">Quick Links</h3>
+                <div class="footer-nav">
                     <ul class="footer-links">
-                        <li class="footer-link"><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li class="footer-link"><a href="#education"><i class="fas fa-chevron-right"></i> Education</a></li>
-                        <li class="footer-link"><a href="#experience"><i class="fas fa-chevron-right"></i> Experience</a></li>
-                        <li class="footer-link"><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
-                        <li class="footer-link"><a href="#certifications"><i class="fas fa-chevron-right"></i> Certifications</a></li>
-                        <li class="footer-link"><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">Contact Info</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="mailto:contact@abrar-ahmed.com"><i class="fas fa-envelope"></i> contact@abrar-ahmed.com</a></li>
-                        <li class="footer-link"><a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a></li>
-                        <li class="footer-link"><a href="#"><i class="fas fa-map-marker-alt"></i> Budapest, Hungary</a></li>
-                    </ul>
+                <div class="footer-social">
+                    <a href="#" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2025 <a href="#">Abrar Ahmed</a>. All rights reserved.</p>
-                <div class="footer-nav">
-                    <a href="#" class="footer-nav-link">Privacy Policy</a>
-                    <a href="#" class="footer-nav-link">Terms of Service</a>
-                    <a href="#" class="footer-nav-link">Cookie Policy</a>
-                </div>
+                <p class="copyright">&copy; 2025 Abrar Ahmed. All rights reserved.</p>
+                <p class="credits">Designed with <i class="fas fa-heart"></i> and modern web technologies</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="#" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-close">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="modal-body">
-                <!-- Content will be dynamically added here -->
-            </div>
-        </div>
-    </div>
-
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/section-backgrounds.js"></script>
     <script src="js/theme-toggle.js"></script>
-    <script src="js/github-links.js"></script>
     <script src="js/certification-links.js"></script>
+    <script src="js/github-links.js"></script>
+    <script src="js/cursor-effects.js"></script>
 </body>
 </html>
