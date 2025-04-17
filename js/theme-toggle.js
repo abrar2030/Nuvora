@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Save theme preference
     localStorage.setItem('theme', !isDarkTheme ? 'dark' : 'light');
+    
+    // Log for debugging
+    console.log('Theme toggled:', !isDarkTheme ? 'dark' : 'light');
   });
   
   // Listen for system preference changes
@@ -74,4 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateThemeUI(e.matches);
     }
   });
+  
+  // Add debug message to confirm script is loaded
+  console.log('Theme toggle initialized');
 });

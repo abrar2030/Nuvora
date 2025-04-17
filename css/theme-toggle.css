@@ -43,9 +43,10 @@ body.light-theme {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: var(--z-50);
+    z-index: 1000; /* Increased z-index to ensure it's above other elements */
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    pointer-events: auto !important; /* Ensure pointer events are enabled */
 }
 
 .theme-toggle:hover {
@@ -58,6 +59,7 @@ body.light-theme {
     width: 24px;
     height: 24px;
     overflow: hidden;
+    pointer-events: none; /* Prevent inner element from capturing clicks */
 }
 
 .theme-toggle i {
@@ -70,6 +72,7 @@ body.light-theme {
     justify-content: center;
     align-items: center;
     transition: var(--transition);
+    pointer-events: none; /* Prevent icons from capturing clicks */
 }
 
 .theme-toggle .fa-sun {
