@@ -1,38 +1,42 @@
-// Function to add certification link boxes to all certification cards
+// Function to add certification verification buttons
 document.addEventListener('DOMContentLoaded', function() {
-  // Get all certification cards
-  const certificationCards = document.querySelectorAll('.certification-card');
+  // Get all certification items
+  const certificationItems = document.querySelectorAll('.certification-item');
   
-  certificationCards.forEach(card => {
-    // Find the original certification link
-    const originalLink = card.querySelector('.certification-link');
+  // Certification verification URLs mapping
+  const certificationVerifyUrls = {
+    'SQL (Advanced)': 'https://www.hackerrank.com/certificates/iframe/bfd758408ff3',
+    'Software Engineer': 'https://www.hackerrank.com/certificates/iframe/407808ada668',
+    'DevOps in Google Cloud': 'https://www.cloudskillsboost.google/public_profiles/1601f1ee-b805-48be-a523-753d139f53cf/badges/13533180',
+    'Terraform in Google Cloud': 'https://www.credly.com/badges/af1f1708-6284-438e-a618-d1b05e7ca3df',
+    'Kubernetes in Google Cloud': 'https://www.cloudskillsboost.google/public_profiles/1601f1ee-b805-48be-a523-753d139f53cf/badges/13533180',
+    'AWS Well-Architected Proficient': 'https://www.credly.com/badges/7be07071-23b7-4916-a8a7-51fbdd071ae2'
+  };
+  
+  certificationItems.forEach(item => {
+    // Find the certification content div
+    const contentDiv = item.querySelector('.certification-content');
     
-    if (originalLink) {
-      // Get the link URL and text
-      const linkUrl = originalLink.getAttribute('href');
-      const linkText = originalLink.textContent.trim();
+    // Find the certification title
+    const titleElement = contentDiv.querySelector('.certification-title');
+    const certTitle = titleElement ? titleElement.textContent.trim() : '';
+    
+    // Find the certification link
+    const certLink = contentDiv.querySelector('.certification-link');
+    
+    if (contentDiv && certTitle && certificationVerifyUrls[certTitle]) {
+      // Update the certification link URL
+      if (certLink) {
+        certLink.setAttribute('href', certificationVerifyUrls[certTitle]);
+      }
       
-      // Create the certification link box
-      const linkBox = document.createElement('a');
-      linkBox.className = 'certification-link-box';
-      linkBox.href = linkUrl;
-      linkBox.target = '_blank';
+      // Find the verify button if it exists
+      const verifyBtn = contentDiv.querySelector('.certification-verify-btn');
       
-      // Add icon
-      const icon = document.createElement('i');
-      icon.className = 'fas fa-certificate';
-      linkBox.appendChild(icon);
-      
-      // Add text
-      const span = document.createElement('span');
-      span.textContent = linkText;
-      linkBox.appendChild(span);
-      
-      // Append to certification card
-      card.appendChild(linkBox);
-      
-      // Hide the original link (CSS already handles this, but just to be sure)
-      originalLink.style.display = 'none';
+      if (verifyBtn) {
+        // Update existing verify button
+        verifyBtn.setAttribute('href', certificationVerifyUrls[certTitle]);
+      }
     }
   });
 });
