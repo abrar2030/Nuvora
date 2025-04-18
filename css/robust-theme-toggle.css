@@ -1,0 +1,128 @@
+/* 
+==============================================
+ROBUST THEME TOGGLE STYLES
+==============================================
+*/
+
+/* Light Theme Variables */
+body.light-theme {
+    --base-dark: #f5f7fa;
+    --dark-secondary: #e9ecef;
+    --primary: #0072ff;
+    --primary-dark: #0056b3;
+    --secondary: #00a67e;
+    --tertiary: #d100a6;
+    --tertiary-dark: #6600cc;
+    --neutral-light: #2d3748;
+    --white: #1a202c;
+    
+    /* Glassmorphism */
+    --glass-background: rgba(245, 247, 250, 0.7);
+    --glass-border: 1px solid rgba(29, 37, 56, 0.1);
+    
+    /* Glow Effects - reduced for light theme */
+    --glow-primary: 0 0 10px rgba(0, 114, 255, 0.4);
+    --glow-secondary: 0 0 10px rgba(0, 166, 126, 0.4);
+    --glow-tertiary: 0 0 10px rgba(209, 0, 166, 0.4);
+    --glow-subtle: 0 0 5px rgba(0, 114, 255, 0.2);
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+    background: var(--glass-background);
+    border: var(--glass-border);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    box-shadow: var(--glow-subtle);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.theme-toggle:hover {
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.theme-toggle i {
+    font-size: 18px;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+/* Show/hide icons based on theme */
+body.dark-theme .theme-toggle .fa-sun {
+    display: block;
+}
+
+body.dark-theme .theme-toggle .fa-moon {
+    display: none;
+}
+
+body.light-theme .theme-toggle .fa-sun {
+    display: none;
+}
+
+body.light-theme .theme-toggle .fa-moon {
+    display: block;
+}
+
+/* Default state (dark theme) */
+.theme-toggle .fa-sun {
+    display: block;
+}
+
+.theme-toggle .fa-moon {
+    display: none;
+}
+
+/* Transition for theme change */
+body, 
+.glass-card, 
+.cyber-panel, 
+.neon-btn, 
+.section-bg, 
+.header, 
+.navbar, 
+.logo, 
+.nav-menu, 
+.nav-link, 
+.hero-title, 
+.hero-subtitle, 
+.btn, 
+.timeline-item, 
+.skill-item, 
+.portfolio-item, 
+.contact-form, 
+.footer {
+    transition: background-color 0.5s ease, 
+                color 0.5s ease, 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        margin-right: 15px;
+    }
+    
+    .theme-toggle i {
+        font-size: 16px;
+    }
+}
