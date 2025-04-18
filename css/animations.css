@@ -1,0 +1,408 @@
+/* 
+==============================================
+ANIMATIONS - STYLESHEET 2025
+==============================================
+*/
+
+/* Base Animation Properties */
+[data-animation] {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-animation].animated {
+    opacity: 1;
+}
+
+/* Animation Delay */
+[data-animation-delay="100"] { transition-delay: 0.1s; }
+[data-animation-delay="200"] { transition-delay: 0.2s; }
+[data-animation-delay="300"] { transition-delay: 0.3s; }
+[data-animation-delay="400"] { transition-delay: 0.4s; }
+[data-animation-delay="500"] { transition-delay: 0.5s; }
+[data-animation-delay="600"] { transition-delay: 0.6s; }
+[data-animation-delay="700"] { transition-delay: 0.7s; }
+[data-animation-delay="800"] { transition-delay: 0.8s; }
+[data-animation-delay="900"] { transition-delay: 0.9s; }
+[data-animation-delay="1000"] { transition-delay: 1s; }
+
+/* Fade Animations */
+[data-animation="fade-in"] {
+    transform: translateY(0);
+}
+
+[data-animation="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-animation="fade-up"].animated {
+    transform: translateY(0);
+}
+
+[data-animation="fade-down"] {
+    transform: translateY(-30px);
+}
+
+[data-animation="fade-down"].animated {
+    transform: translateY(0);
+}
+
+[data-animation="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-animation="fade-left"].animated {
+    transform: translateX(0);
+}
+
+[data-animation="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-animation="fade-right"].animated {
+    transform: translateX(0);
+}
+
+/* Scale Animations */
+[data-animation="zoom-in"] {
+    transform: scale(0.9);
+}
+
+[data-animation="zoom-in"].animated {
+    transform: scale(1);
+}
+
+[data-animation="zoom-out"] {
+    transform: scale(1.1);
+}
+
+[data-animation="zoom-out"].animated {
+    transform: scale(1);
+}
+
+/* Flip Animations */
+[data-animation="flip-x"] {
+    transform: rotateX(90deg);
+}
+
+[data-animation="flip-x"].animated {
+    transform: rotateX(0);
+}
+
+[data-animation="flip-y"] {
+    transform: rotateY(90deg);
+}
+
+[data-animation="flip-y"].animated {
+    transform: rotateY(0);
+}
+
+/* Text Animations */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-text::before {
+    color: #00d8ff;
+    z-index: -1;
+    animation: glitch-anim-1 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    color: #ff00aa;
+    z-index: -2;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0%, 100% { 
+        clip-path: inset(0 0 98% 0);
+        transform: translate(-2px, -2px);
+    }
+    20% { 
+        clip-path: inset(20% 0 80% 0);
+        transform: translate(2px, 2px);
+    }
+    40% { 
+        clip-path: inset(40% 0 60% 0);
+        transform: translate(-2px, 2px);
+    }
+    60% { 
+        clip-path: inset(60% 0 40% 0);
+        transform: translate(2px, -2px);
+    }
+    80% { 
+        clip-path: inset(80% 0 20% 0);
+        transform: translate(-2px, 2px);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0%, 100% { 
+        clip-path: inset(0 0 98% 0);
+        transform: translate(2px, 2px);
+    }
+    20% { 
+        clip-path: inset(20% 0 80% 0);
+        transform: translate(-2px, -2px);
+    }
+    40% { 
+        clip-path: inset(40% 0 60% 0);
+        transform: translate(2px, -2px);
+    }
+    60% { 
+        clip-path: inset(60% 0 40% 0);
+        transform: translate(-2px, 2px);
+    }
+    80% { 
+        clip-path: inset(80% 0 20% 0);
+        transform: translate(2px, -2px);
+    }
+}
+
+/* Typing Animation */
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--primary);
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary) }
+}
+
+/* Floating Elements Animation */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-element {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(0, 216, 255, 0.2) 0%, rgba(0, 255, 179, 0.1) 100%);
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: float 15s infinite ease-in-out;
+}
+
+.floating-element:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 60%;
+    left: 70%;
+    width: 120px;
+    height: 120px;
+    animation-delay: -5s;
+}
+
+.floating-element:nth-child(3) {
+    top: 40%;
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+        transform: translateY(10px) translateX(-15px);
+    }
+    75% {
+        transform: translateY(15px) translateX(5px);
+    }
+}
+
+/* Pulse Animation */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 216, 255, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 216, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 216, 255, 0);
+    }
+}
+
+/* Shimmer Effect */
+.shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+/* Reveal Animation */
+.reveal-text {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+}
+
+.reveal-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary);
+    animation: reveal-text-swipe 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.reveal-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+    animation: reveal-text-content 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes reveal-text-swipe {
+    0% {
+        width: 0;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 100%;
+        left: 100%;
+    }
+}
+
+@keyframes reveal-text-content {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Custom Cursor Animation */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+    opacity: 0;
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+}
+
+body:hover .custom-cursor,
+body:hover .cursor-trail {
+    opacity: 1;
+}
+
+.custom-cursor.hover {
+    width: 40px;
+    height: 40px;
+    border-color: var(--secondary);
+    background-color: rgba(0, 255, 179, 0.1);
+    mix-blend-mode: difference;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .custom-cursor,
+    .cursor-trail {
+        display: none;
+    }
+}

@@ -1,0 +1,52 @@
+/* 
+==============================================
+CERTIFICATION VERIFY BUTTON STYLES
+==============================================
+*/
+
+.certification-verify-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.certification-verify-btn:hover {
+    background: rgba(0, 255, 157, 0.1);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-3px);
+}
+
+.certification-verify-btn i {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-right: 0.75rem;
+}
+
+.certification-verify-btn span {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .certification-verify-btn {
+        padding: 0.6rem 1rem;
+    }
+    
+    .certification-verify-btn i {
+        font-size: 1rem;
+    }
+    
+    .certification-verify-btn span {
+        font-size: 0.75rem;
+    }
+}
