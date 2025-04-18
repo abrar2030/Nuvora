@@ -1,0 +1,121 @@
+/* 
+==============================================
+FIX STYLES
+Addresses various styling issues across the website
+==============================================
+*/
+
+/* Fix social links in Connect With Me section */
+.social-link {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
+}
+
+.social-link:active {
+    transform: translateY(-1px);
+}
+
+/* Fix recommendation slider navigation */
+.slider-arrow {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-arrow:hover {
+    transform: scale(1.1);
+}
+
+.slider-arrow:active {
+    transform: scale(0.95);
+}
+
+.slider-arrow.next {
+    right: 0;
+}
+
+.slider-arrow.prev {
+    left: 0;
+}
+
+.slider-dot {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Fix recommendation items visibility */
+.recommendation-item {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.recommendation-item.active {
+    opacity: 1;
+    transform: translateX(0);
+    display: block !important;
+}
+
+/* Fix portfolio items and remove unwanted icons */
+.portfolio-overlay-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-link {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    font-size: 1.5em !important;
+    padding: 15px !important;
+}
+
+/* Fix certification verification buttons */
+.certification-verify-btn {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Fix contact form */
+.form-input {
+    position: relative;
+    z-index: 5;
+}
+
+/* Fix mobile responsiveness */
+@media (max-width: 768px) {
+    .social-link, 
+    .portfolio-link, 
+    .certification-verify-btn, 
+    .slider-arrow {
+        /* Increase touch target size on mobile */
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .slider-controls {
+        padding: 10px 0;
+    }
+    
+    .slider-arrow {
+        padding: 10px;
+    }
+}
