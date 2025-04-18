@@ -82,7 +82,7 @@ PROFILE IMAGE CENTERING AND STYLING
     .about-content {
         flex-direction: row;
         text-align: left;
-        align-items: flex-start;
+        align-items: center;
     }
     
     .about-image-wrapper {
