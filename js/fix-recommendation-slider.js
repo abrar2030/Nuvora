@@ -5,7 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize the recommendation slider
-  initRecommendationSlider();
+  setTimeout(function() {
+    initRecommendationSlider();
+  }, 100); // Small delay to ensure all other scripts have run
   
   function initRecommendationSlider() {
     // Get slider elements
@@ -20,9 +22,31 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    // Set initial state
+    // Set initial state - force first recommendation
     let currentIndex = 0;
-    updateSlider();
+    
+    // Explicitly set display style for all items
+    recommendationItems.forEach((item, index) => {
+      // Force hide all items initially
+      item.style.display = 'none';
+      item.classList.remove('active');
+    });
+    
+    // Force show first item
+    if (recommendationItems[0]) {
+      recommendationItems[0].style.display = 'block';
+      recommendationItems[0].classList.add('active');
+      console.log('Forcing display of first recommendation');
+    }
+    
+    // Update dots to match first recommendation
+    sliderDots.forEach((dot, index) => {
+      if (index === 0) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
     
     // Add event listeners to buttons with improved handling
     prevButton.addEventListener('click', function(e) {
@@ -127,4 +151,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Recommendation slider initialized with', recommendationItems.length, 'items');
   }
+});
+
+// Add a window load event to ensure the first recommendation is shown
+window.addEventListener('load', function() {
+  // Force first recommendation to be visible after page is fully loaded
+  setTimeout(function() {
+    const recommendationItems = document.querySelectorAll('.recommendation-item');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+    
+    if (recommendationItems.length) {
+      // Hide all items
+      recommendationItems.forEach((item, index) => {
+        item.style.display = 'none';
+        item.classList.remove('active');
+      });
+      
+      // Show first item
+      recommendationItems[0].style.display = 'block';
+      recommendationItems[0].classList.add('active');
+      
+      // Update dots
+      if (sliderDots.length) {
+        sliderDots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === 0);
+        });
+      }
+      
+      console.log('Window load: Forced display of first recommendation');
+    }
+  }, 300); // Delay to ensure everything else has loaded
 });
