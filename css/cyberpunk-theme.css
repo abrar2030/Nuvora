@@ -1,0 +1,191 @@
+/* 
+==============================================
+CYBERPUNK THEME - COLOR SCHEME 2025
+==============================================
+Description: Electric pink, deep purple, and vibrant accents
+Day: Light gray with bold pink/purple
+Night: Deep black with bright cyberpunk glow
+*/
+
+/* ===== VARIABLES - DARK MODE (NIGHT) ===== */
+body.dark-theme {
+    /* Base Colors */
+    --base-dark: #0a0014;
+    --dark-secondary: #120025;
+    --dark-tertiary: #1a0033;
+    
+    /* Primary Colors - Electric Pink spectrum */
+    --primary: #ff00ff;
+    --primary-dark: #cc00cc;
+    --primary-light: #ff66ff;
+    --primary-glow: rgba(255, 0, 255, 0.8);
+    
+    /* Secondary Colors - Deep Purple spectrum */
+    --secondary: #9900ff;
+    --secondary-dark: #7700cc;
+    --secondary-light: #bb66ff;
+    --secondary-glow: rgba(153, 0, 255, 0.8);
+    
+    /* Accent Colors - Vibrant Cyan */
+    --accent: #00ffff;
+    --accent-dark: #00cccc;
+    --accent-light: #66ffff;
+    --accent-glow: rgba(0, 255, 255, 0.8);
+    
+    /* Complementary Colors - Electric Blue */
+    --complement: #00ccff;
+    --complement-dark: #0099cc;
+    --complement-light: #66e0ff;
+    --complement-glow: rgba(0, 204, 255, 0.8);
+    
+    /* Neutral Colors */
+    --neutral-light: #e6e6ff;
+    --neutral-medium: #b3b3e6;
+    --neutral-dark: #6666b3;
+    --white: #ffffff;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    --gradient-complement: linear-gradient(135deg, var(--complement) 0%, var(--complement-dark) 100%);
+    
+    /* Multi-color Gradients */
+    --gradient-multi-blue: linear-gradient(135deg, #00ffff 0%, #00ccff 50%, #0099ff 100%);
+    --gradient-multi-purple: linear-gradient(135deg, #ff00ff 0%, #cc00ff 50%, #9900ff 100%);
+    --gradient-cyber: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    --gradient-aurora: linear-gradient(135deg, var(--complement) 0%, var(--primary) 33%, var(--secondary) 66%, var(--accent) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--base-dark) 0%, var(--dark-secondary) 100%);
+    
+    /* Mesh Gradients */
+    --mesh-gradient-1: radial-gradient(circle at 10% 20%, rgba(255, 0, 255, 0.3) 0%, rgba(153, 0, 255, 0.1) 20%, transparent 70%),
+                      radial-gradient(circle at 80% 30%, rgba(0, 255, 255, 0.2) 0%, transparent 60%),
+                      radial-gradient(circle at 40% 80%, rgba(0, 204, 255, 0.2) 0%, transparent 60%);
+    
+    --mesh-gradient-2: radial-gradient(circle at 80% 10%, rgba(255, 0, 255, 0.2) 0%, transparent 60%),
+                      radial-gradient(circle at 20% 40%, rgba(153, 0, 255, 0.2) 0%, transparent 50%),
+                      radial-gradient(circle at 60% 80%, rgba(0, 255, 255, 0.2) 0%, transparent 60%);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 20px var(--primary-glow);
+    --glow-primary-intense: 0 0 30px var(--primary-glow), 0 0 60px rgba(255, 0, 255, 0.4);
+    --glow-secondary: 0 0 20px var(--secondary-glow);
+    --glow-secondary-intense: 0 0 30px var(--secondary-glow), 0 0 60px rgba(153, 0, 255, 0.4);
+    --glow-accent: 0 0 20px var(--accent-glow);
+    --glow-accent-intense: 0 0 30px var(--accent-glow), 0 0 60px rgba(0, 255, 255, 0.4);
+    --glow-complement: 0 0 20px var(--complement-glow);
+    --glow-complement-intense: 0 0 30px var(--complement-glow), 0 0 60px rgba(0, 204, 255, 0.4);
+    --glow-subtle: 0 0 15px rgba(255, 0, 255, 0.3);
+    
+    /* Glassmorphism */
+    --glass-background: rgba(10, 0, 20, 0.7);
+    --glass-border: 1px solid rgba(255, 0, 255, 0.2);
+    --glass-blur: blur(12px);
+    
+    /* Text colors */
+    --text-primary: #e6e6ff;
+    --text-secondary: #b3b3e6;
+    --text-tertiary: #6666b3;
+}
+
+/* ===== VARIABLES - LIGHT MODE (DAY) ===== */
+body.light-theme {
+    /* Base Colors */
+    --base-dark: #f0f0f5;
+    --dark-secondary: #e0e0eb;
+    --dark-tertiary: #d1d1e0;
+    
+    /* Primary Colors - Electric Pink spectrum */
+    --primary: #cc00cc;
+    --primary-dark: #990099;
+    --primary-light: #ff33ff;
+    --primary-glow: rgba(204, 0, 204, 0.6);
+    
+    /* Secondary Colors - Deep Purple spectrum */
+    --secondary: #7700cc;
+    --secondary-dark: #550099;
+    --secondary-light: #9933ff;
+    --secondary-glow: rgba(119, 0, 204, 0.6);
+    
+    /* Accent Colors - Vibrant Cyan */
+    --accent: #00cccc;
+    --accent-dark: #009999;
+    --accent-light: #33ffff;
+    --accent-glow: rgba(0, 204, 204, 0.6);
+    
+    /* Complementary Colors - Electric Blue */
+    --complement: #0099cc;
+    --complement-dark: #007799;
+    --complement-light: #33bbff;
+    --complement-glow: rgba(0, 153, 204, 0.6);
+    
+    /* Neutral Colors */
+    --neutral-light: #1a0033;
+    --neutral-medium: #330066;
+    --neutral-dark: #4d0099;
+    --white: #0a0014;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    --gradient-complement: linear-gradient(135deg, var(--complement) 0%, var(--complement-dark) 100%);
+    
+    /* Multi-color Gradients */
+    --gradient-multi-blue: linear-gradient(135deg, #33ffff 0%, #00ccff 50%, #0099cc 100%);
+    --gradient-multi-purple: linear-gradient(135deg, #ff33ff 0%, #cc00ff 50%, #7700cc 100%);
+    --gradient-cyber: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    --gradient-aurora: linear-gradient(135deg, var(--complement) 0%, var(--primary) 33%, var(--secondary) 66%, var(--accent) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--base-dark) 0%, var(--dark-secondary) 100%);
+    
+    /* Mesh Gradients */
+    --mesh-gradient-1: radial-gradient(circle at 10% 20%, rgba(204, 0, 204, 0.2) 0%, rgba(119, 0, 204, 0.1) 20%, transparent 70%),
+                      radial-gradient(circle at 80% 30%, rgba(0, 204, 204, 0.15) 0%, transparent 60%),
+                      radial-gradient(circle at 40% 80%, rgba(0, 153, 204, 0.15) 0%, transparent 60%);
+    
+    --mesh-gradient-2: radial-gradient(circle at 80% 10%, rgba(204, 0, 204, 0.15) 0%, transparent 60%),
+                      radial-gradient(circle at 20% 40%, rgba(119, 0, 204, 0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 60% 80%, rgba(0, 204, 204, 0.15) 0%, transparent 60%);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 15px var(--primary-glow);
+    --glow-primary-intense: 0 0 20px var(--primary-glow), 0 0 40px rgba(204, 0, 204, 0.3);
+    --glow-secondary: 0 0 15px var(--secondary-glow);
+    --glow-secondary-intense: 0 0 20px var(--secondary-glow), 0 0 40px rgba(119, 0, 204, 0.3);
+    --glow-accent: 0 0 15px var(--accent-glow);
+    --glow-accent-intense: 0 0 20px var(--accent-glow), 0 0 40px rgba(0, 204, 204, 0.3);
+    --glow-complement: 0 0 15px var(--complement-glow);
+    --glow-complement-intense: 0 0 20px var(--complement-glow), 0 0 40px rgba(0, 153, 204, 0.3);
+    --glow-subtle: 0 0 10px rgba(204, 0, 204, 0.2);
+    
+    /* Glassmorphism */
+    --glass-background: rgba(240, 240, 245, 0.7);
+    --glass-border: 1px solid rgba(204, 0, 204, 0.2);
+    --glass-blur: blur(12px);
+    
+    /* Text colors */
+    --text-primary: #1a0033;
+    --text-secondary: #330066;
+    --text-tertiary: #4d0099;
+}
+
+/* Additional custom styles for Cyberpunk theme */
+body.dark-theme .section-bg-pattern {
+    background-image: radial-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+}
+
+body.dark-theme .section-bg-grid {
+    background-image: 
+        linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(153, 0, 255, 0.05) 1px, transparent 1px);
+}
+
+body.light-theme .section-bg-pattern {
+    background-image: radial-gradient(rgba(204, 0, 204, 0.1) 1px, transparent 1px);
+}
+
+body.light-theme .section-bg-grid {
+    background-image: 
+        linear-gradient(rgba(204, 0, 204, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(119, 0, 204, 0.05) 1px, transparent 1px);
+}

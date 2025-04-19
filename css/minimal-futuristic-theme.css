@@ -1,0 +1,191 @@
+/* 
+==============================================
+MINIMAL FUTURISTIC THEME - COLOR SCHEME 2025
+==============================================
+Description: Cool whites, soft grays, hints of sky blue
+Day: Crisp white background, soft shadows
+Night: Slate gray, steel tones with icy blue text
+*/
+
+/* ===== VARIABLES - DARK MODE (NIGHT) ===== */
+body.dark-theme {
+    /* Base Colors */
+    --base-dark: #1a1f2e;
+    --dark-secondary: #252a38;
+    --dark-tertiary: #2f3545;
+    
+    /* Primary Colors - Sky Blue spectrum */
+    --primary: #4dabff;
+    --primary-dark: #3d8bcc;
+    --primary-light: #7fc1ff;
+    --primary-glow: rgba(77, 171, 255, 0.6);
+    
+    /* Secondary Colors - Steel Blue spectrum */
+    --secondary: #6d8ca8;
+    --secondary-dark: #546c82;
+    --secondary-light: #8eabc3;
+    --secondary-glow: rgba(109, 140, 168, 0.6);
+    
+    /* Accent Colors - Icy Blue */
+    --accent: #a0d2ff;
+    --accent-dark: #80a8cc;
+    --accent-light: #c0e1ff;
+    --accent-glow: rgba(160, 210, 255, 0.6);
+    
+    /* Complementary Colors - Soft Gray */
+    --complement: #d0d8e0;
+    --complement-dark: #a6acb3;
+    --complement-light: #e8edf2;
+    --complement-glow: rgba(208, 216, 224, 0.6);
+    
+    /* Neutral Colors */
+    --neutral-light: #e6edf5;
+    --neutral-medium: #b0bac6;
+    --neutral-dark: #7a8699;
+    --white: #ffffff;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    --gradient-complement: linear-gradient(135deg, var(--complement) 0%, var(--complement-dark) 100%);
+    
+    /* Multi-color Gradients */
+    --gradient-multi-blue: linear-gradient(135deg, #4dabff 0%, #3d8bcc 50%, #2d6b9c 100%);
+    --gradient-multi-steel: linear-gradient(135deg, #6d8ca8 0%, #546c82 50%, #3a4c5c 100%);
+    --gradient-cyber: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    --gradient-aurora: linear-gradient(135deg, var(--complement) 0%, var(--primary) 33%, var(--secondary) 66%, var(--accent) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--base-dark) 0%, var(--dark-secondary) 100%);
+    
+    /* Mesh Gradients */
+    --mesh-gradient-1: radial-gradient(circle at 10% 20%, rgba(77, 171, 255, 0.15) 0%, rgba(61, 139, 204, 0.05) 20%, transparent 70%),
+                      radial-gradient(circle at 80% 30%, rgba(109, 140, 168, 0.1) 0%, transparent 60%),
+                      radial-gradient(circle at 40% 80%, rgba(160, 210, 255, 0.1) 0%, transparent 60%);
+    
+    --mesh-gradient-2: radial-gradient(circle at 80% 10%, rgba(208, 216, 224, 0.1) 0%, transparent 60%),
+                      radial-gradient(circle at 20% 40%, rgba(77, 171, 255, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 60% 80%, rgba(109, 140, 168, 0.1) 0%, transparent 60%);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 15px var(--primary-glow);
+    --glow-primary-intense: 0 0 20px var(--primary-glow), 0 0 40px rgba(77, 171, 255, 0.3);
+    --glow-secondary: 0 0 15px var(--secondary-glow);
+    --glow-secondary-intense: 0 0 20px var(--secondary-glow), 0 0 40px rgba(109, 140, 168, 0.3);
+    --glow-accent: 0 0 15px var(--accent-glow);
+    --glow-accent-intense: 0 0 20px var(--accent-glow), 0 0 40px rgba(160, 210, 255, 0.3);
+    --glow-complement: 0 0 15px var(--complement-glow);
+    --glow-complement-intense: 0 0 20px var(--complement-glow), 0 0 40px rgba(208, 216, 224, 0.3);
+    --glow-subtle: 0 0 10px rgba(77, 171, 255, 0.2);
+    
+    /* Glassmorphism */
+    --glass-background: rgba(26, 31, 46, 0.7);
+    --glass-border: 1px solid rgba(77, 171, 255, 0.15);
+    --glass-blur: blur(12px);
+    
+    /* Text colors */
+    --text-primary: #e6edf5;
+    --text-secondary: #b0bac6;
+    --text-tertiary: #7a8699;
+}
+
+/* ===== VARIABLES - LIGHT MODE (DAY) ===== */
+body.light-theme {
+    /* Base Colors */
+    --base-dark: #f5f8fc;
+    --dark-secondary: #edf2f9;
+    --dark-tertiary: #e5ecf6;
+    
+    /* Primary Colors - Sky Blue spectrum */
+    --primary: #3d8bcc;
+    --primary-dark: #2d6b9c;
+    --primary-light: #4dabff;
+    --primary-glow: rgba(61, 139, 204, 0.4);
+    
+    /* Secondary Colors - Steel Blue spectrum */
+    --secondary: #546c82;
+    --secondary-dark: #3a4c5c;
+    --secondary-light: #6d8ca8;
+    --secondary-glow: rgba(84, 108, 130, 0.4);
+    
+    /* Accent Colors - Icy Blue */
+    --accent: #80a8cc;
+    --accent-dark: #60809c;
+    --accent-light: #a0d2ff;
+    --accent-glow: rgba(128, 168, 204, 0.4);
+    
+    /* Complementary Colors - Soft Gray */
+    --complement: #a6acb3;
+    --complement-dark: #7c8086;
+    --complement-light: #d0d8e0;
+    --complement-glow: rgba(166, 172, 179, 0.4);
+    
+    /* Neutral Colors */
+    --neutral-light: #1a1f2e;
+    --neutral-medium: #252a38;
+    --neutral-dark: #2f3545;
+    --white: #0a0f1e;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    --gradient-complement: linear-gradient(135deg, var(--complement) 0%, var(--complement-dark) 100%);
+    
+    /* Multi-color Gradients */
+    --gradient-multi-blue: linear-gradient(135deg, #4dabff 0%, #3d8bcc 50%, #2d6b9c 100%);
+    --gradient-multi-steel: linear-gradient(135deg, #6d8ca8 0%, #546c82 50%, #3a4c5c 100%);
+    --gradient-cyber: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    --gradient-aurora: linear-gradient(135deg, var(--complement) 0%, var(--primary) 33%, var(--secondary) 66%, var(--accent) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--base-dark) 0%, var(--dark-secondary) 100%);
+    
+    /* Mesh Gradients */
+    --mesh-gradient-1: radial-gradient(circle at 10% 20%, rgba(61, 139, 204, 0.08) 0%, rgba(45, 107, 156, 0.03) 20%, transparent 70%),
+                      radial-gradient(circle at 80% 30%, rgba(84, 108, 130, 0.05) 0%, transparent 60%),
+                      radial-gradient(circle at 40% 80%, rgba(128, 168, 204, 0.05) 0%, transparent 60%);
+    
+    --mesh-gradient-2: radial-gradient(circle at 80% 10%, rgba(166, 172, 179, 0.05) 0%, transparent 60%),
+                      radial-gradient(circle at 20% 40%, rgba(61, 139, 204, 0.05) 0%, transparent 50%),
+                      radial-gradient(circle at 60% 80%, rgba(84, 108, 130, 0.05) 0%, transparent 60%);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 10px var(--primary-glow);
+    --glow-primary-intense: 0 0 15px var(--primary-glow), 0 0 30px rgba(61, 139, 204, 0.2);
+    --glow-secondary: 0 0 10px var(--secondary-glow);
+    --glow-secondary-intense: 0 0 15px var(--secondary-glow), 0 0 30px rgba(84, 108, 130, 0.2);
+    --glow-accent: 0 0 10px var(--accent-glow);
+    --glow-accent-intense: 0 0 15px var(--accent-glow), 0 0 30px rgba(128, 168, 204, 0.2);
+    --glow-complement: 0 0 10px var(--complement-glow);
+    --glow-complement-intense: 0 0 15px var(--complement-glow), 0 0 30px rgba(166, 172, 179, 0.2);
+    --glow-subtle: 0 0 8px rgba(61, 139, 204, 0.15);
+    
+    /* Glassmorphism */
+    --glass-background: rgba(245, 248, 252, 0.7);
+    --glass-border: 1px solid rgba(61, 139, 204, 0.15);
+    --glass-blur: blur(12px);
+    
+    /* Text colors */
+    --text-primary: #1a1f2e;
+    --text-secondary: #252a38;
+    --text-tertiary: #2f3545;
+}
+
+/* Additional custom styles for Minimal Futuristic theme */
+body.dark-theme .section-bg-pattern {
+    background-image: radial-gradient(rgba(77, 171, 255, 0.05) 1px, transparent 1px);
+}
+
+body.dark-theme .section-bg-grid {
+    background-image: 
+        linear-gradient(rgba(77, 171, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(109, 140, 168, 0.03) 1px, transparent 1px);
+}
+
+body.light-theme .section-bg-pattern {
+    background-image: radial-gradient(rgba(61, 139, 204, 0.05) 1px, transparent 1px);
+}
+
+body.light-theme .section-bg-grid {
+    background-image: 
+        linear-gradient(rgba(61, 139, 204, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(84, 108, 130, 0.03) 1px, transparent 1px);
+}
