@@ -38,7 +38,9 @@ window.addEventListener('load', () => {
     }
 });
 
-// Theme Toggle
+// Theme Toggle is now handled by consolidated-theme-toggle.js
+// This code has been commented out to prevent conflicts
+/*
 if (elementExists(themeToggle)) {
     // Check for system preference
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -72,6 +74,7 @@ if (elementExists(themeToggle)) {
         }
     });
 }
+*/
 
 // Navigation Toggle
 if (elementExists(navToggle) && elementExists(navMenu)) {
