@@ -6,29 +6,29 @@ FUTURISTIC PORTFOLIO - MAIN STYLESHEET 2025
 
 /* ===== VARIABLES ===== */
 :root {
-    /* Colors - Enhanced Futuristic Palette */
-    --base-dark: #080c14;
-    --dark-secondary: #151b28;
-    --primary: #00d8ff;
-    --primary-dark: #0072ff;
-    --secondary: #00ffb3;
-    --tertiary: #ff00aa;
-    --tertiary-dark: #7a00ff;
-    --neutral-light: #e6e9ff;
-    --white: #ffffff;
+    /* Colors - Enhanced Futuristic Palette - Using neo-futuristic variables */
+    --base-dark: var(--base-dark);
+    --dark-secondary: var(--dark-secondary);
+    --primary: var(--primary);
+    --primary-dark: var(--primary-dark);
+    --secondary: var(--secondary);
+    --tertiary: var(--accent);
+    --tertiary-dark: var(--secondary-dark);
+    --neutral-light: var(--neutral-light);
+    --white: var(--white);
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-    --gradient-accent: linear-gradient(135deg, var(--tertiary) 0%, var(--tertiary-dark) 100%);
-    --gradient-dark: linear-gradient(135deg, var(--base-dark) 0%, var(--dark-secondary) 100%);
-    --gradient-multi: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 30%, var(--tertiary) 70%, var(--primary-dark) 100%);
+    --gradient-primary: var(--gradient-primary);
+    --gradient-secondary: var(--gradient-secondary);
+    --gradient-accent: var(--gradient-accent);
+    --gradient-dark: var(--gradient-dark);
+    --gradient-multi: var(--gradient-aurora);
     
     /* Glow Effects */
-    --glow-primary: 0 0 20px rgba(0, 216, 255, 0.7);
-    --glow-secondary: 0 0 20px rgba(0, 255, 179, 0.7);
-    --glow-tertiary: 0 0 20px rgba(255, 0, 170, 0.7);
-    --glow-subtle: 0 0 15px rgba(0, 216, 255, 0.3);
+    --glow-primary: var(--glow-primary);
+    --glow-secondary: var(--glow-complement);
+    --glow-tertiary: var(--glow-accent);
+    --glow-subtle: var(--glow-subtle);
     
     /* Typography - Futuristic */
     --font-heading: 'Orbitron', sans-serif;

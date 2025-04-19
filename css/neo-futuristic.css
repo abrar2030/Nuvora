@@ -1,0 +1,119 @@
+/* 
+==============================================
+NEO-FUTURISTIC PORTFOLIO - ENHANCED COLOR SCHEME 2025
+==============================================
+*/
+
+/* ===== VARIABLES ===== */
+:root {
+    /* Colors - Neo-Futuristic Palette */
+    --base-dark: #050a14;
+    --dark-secondary: #0f1525;
+    --dark-tertiary: #1a2035;
+    
+    /* Primary Colors - Vibrant Cyan/Blue spectrum */
+    --primary: #00e5ff;
+    --primary-dark: #0084ff;
+    --primary-light: #80ffff;
+    --primary-glow: rgba(0, 229, 255, 0.8);
+    
+    /* Secondary Colors - Electric Purple spectrum */
+    --secondary: #a45dff;
+    --secondary-dark: #7a00ff;
+    --secondary-light: #c39fff;
+    --secondary-glow: rgba(164, 93, 255, 0.8);
+    
+    /* Accent Colors - Neon spectrum */
+    --accent: #ff2a6d;
+    --accent-dark: #d1004b;
+    --accent-light: #ff6b9e;
+    --accent-glow: rgba(255, 42, 109, 0.8);
+    
+    /* Complementary Colors */
+    --complement: #05ffa1;
+    --complement-dark: #00cc80;
+    --complement-light: #7dffc1;
+    --complement-glow: rgba(5, 255, 161, 0.8);
+    
+    /* Neutral Colors */
+    --neutral-light: #e6f2ff;
+    --neutral-medium: #a4b8d3;
+    --neutral-dark: #5d7290;
+    --white: #ffffff;
+    
+    /* Gradients - Enhanced with multiple color stops */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    --gradient-complement: linear-gradient(135deg, var(--complement) 0%, var(--complement-dark) 100%);
+    
+    /* Multi-color Gradients */
+    --gradient-multi-blue: linear-gradient(135deg, #00e5ff 0%, #0084ff 50%, #0033ff 100%);
+    --gradient-multi-purple: linear-gradient(135deg, #a45dff 0%, #7a00ff 50%, #5000ff 100%);
+    --gradient-cyber: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    --gradient-aurora: linear-gradient(135deg, var(--complement) 0%, var(--primary) 33%, var(--secondary) 66%, var(--accent) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--base-dark) 0%, var(--dark-secondary) 100%);
+    
+    /* Mesh Gradients */
+    --mesh-gradient-1: radial-gradient(circle at 10% 20%, rgba(0, 229, 255, 0.3) 0%, rgba(0, 132, 255, 0.1) 20%, transparent 70%),
+                      radial-gradient(circle at 80% 30%, rgba(164, 93, 255, 0.2) 0%, transparent 60%),
+                      radial-gradient(circle at 40% 80%, rgba(255, 42, 109, 0.2) 0%, transparent 60%);
+    
+    --mesh-gradient-2: radial-gradient(circle at 80% 10%, rgba(5, 255, 161, 0.2) 0%, transparent 60%),
+                      radial-gradient(circle at 20% 40%, rgba(0, 229, 255, 0.2) 0%, transparent 50%),
+                      radial-gradient(circle at 60% 80%, rgba(164, 93, 255, 0.2) 0%, transparent 60%);
+    
+    /* Glow Effects - Enhanced with variable intensity */
+    --glow-primary: 0 0 20px var(--primary-glow);
+    --glow-primary-intense: 0 0 30px var(--primary-glow), 0 0 60px rgba(0, 229, 255, 0.4);
+    --glow-secondary: 0 0 20px var(--secondary-glow);
+    --glow-secondary-intense: 0 0 30px var(--secondary-glow), 0 0 60px rgba(164, 93, 255, 0.4);
+    --glow-accent: 0 0 20px var(--accent-glow);
+    --glow-accent-intense: 0 0 30px var(--accent-glow), 0 0 60px rgba(255, 42, 109, 0.4);
+    --glow-complement: 0 0 20px var(--complement-glow);
+    --glow-complement-intense: 0 0 30px var(--complement-glow), 0 0 60px rgba(5, 255, 161, 0.4);
+    --glow-subtle: 0 0 15px rgba(0, 229, 255, 0.3);
+    
+    /* Glassmorphism */
+    --glass-background: rgba(5, 10, 20, 0.7);
+    --glass-background-light: rgba(230, 242, 255, 0.7);
+    --glass-border: 1px solid rgba(0, 229, 255, 0.2);
+    --glass-border-light: 1px solid rgba(164, 184, 211, 0.3);
+    --glass-blur: blur(12px);
+    
+    /* Typography - Futuristic */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-subheading: 'Rajdhani', sans-serif;
+    --font-body: 'Exo 2', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Animation Speeds */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-very-slow: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Variables */
+body.light-theme {
+    --base-dark: #f0f5ff;
+    --dark-secondary: #e0eaff;
+    --dark-tertiary: #d0dfff;
+    
+    --glass-background: rgba(240, 245, 255, 0.7);
+    --glass-border: 1px solid rgba(0, 132, 255, 0.2);
+    
+    --gradient-dark: linear-gradient(135deg, var(--base-dark) 0%, var(--dark-secondary) 100%);
+    
+    /* Text colors for light theme */
+    --text-primary: #0f1525;
+    --text-secondary: #1a2035;
+    --text-tertiary: #2a3045;
+}
+
+/* Dark Theme Variables */
+body.dark-theme, body {
+    --text-primary: #e6f2ff;
+    --text-secondary: #a4b8d3;
+    --text-tertiary: #5d7290;
+}

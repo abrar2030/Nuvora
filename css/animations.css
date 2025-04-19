@@ -213,6 +213,11 @@ ANIMATIONS - STYLESHEET 2025
     animation: float 15s infinite ease-in-out;
 }
 
+.light-theme .floating-element {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 223, 0, 0.2) 100%);
+    filter: blur(8px);
+}
+
 .floating-element:nth-child(1) {
     top: 20%;
     left: 10%;
