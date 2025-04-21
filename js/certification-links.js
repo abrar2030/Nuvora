@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'Software Engineer': 'https://www.hackerrank.com/certificates/iframe/407808ada668',
     'DevOps in Google Cloud': 'https://www.cloudskillsboost.google/public_profiles/1601f1ee-b805-48be-a523-753d139f53cf/badges/13533180',
     'Terraform in Google Cloud': 'https://www.credly.com/badges/af1f1708-6284-438e-a618-d1b05e7ca3df',
-    'Kubernetes in Google Cloud': 'https://www.cloudskillsboost.google/public_profiles/1601f1ee-b805-48be-a523-753d139f53cf/badges/13533180',
+    'Kubernetes in Google Cloud': 'https://www.credly.com/badges/638bf94d-f099-4173-b62b-be91bb814092',
     'AWS Well-Architected Proficient': 'https://www.credly.com/badges/7be07071-23b7-4916-a8a7-51fbdd071ae2'
   };
   
